@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-warm-grid">
+    <meta name="description" content="서초 가라오케, 진짜는 따로 있다. 감각적인 공간과 완벽한 사운드, 그리고 형님들만 아는 그곳. 서초 가라오케 추천 블로그에서 진짜 정보를 확인하라.">
+    <meta name="keywords" content="서초 가라오케, 서초 가라오케 추천, 서초 노래방, 서초 가라오케 블로그, 서초구 가라오케, 강남 가라오케">
+    <meta name="author" content="서초 가라오케 추천">
+    <meta property="og:title" content="서초 가라오케 추천 | 블로그 - 진짜 정보는 여기에">
+    <meta property="og:description" content="서초 가라오케, 형님들이 인정한 그곳. 감각적인 인테리어, 최신 음향, 프라이빗한 공간. 지금 바로 예약하고 특별한 밤을 즐기세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200">
+    <title>서초 가라오케 추천 | 블로그 - 진짜 정보는 여기에</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f3ee; color: #1a1a2e; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #1a1a2e; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .logo { font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: -0.5px; }
+        .logo span { color: #e94560; }
+        nav { display: flex; gap: 25px; align-items: center; }
+        nav a { color: #ccc; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: #e94560; }
+        .cta-nav { background: #e94560; color: #fff; padding: 8px 20px; border-radius: 25px; font-weight: 700; transition: background 0.3s; }
+        .cta-nav:hover { background: #d63851; color: #fff; }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; padding: 5px; }
+        .hamburger span { width: 28px; height: 3px; background: #fff; margin: 4px 0; transition: 0.3s; border-radius: 2px; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; width: 100%; background: #1a1a2e; padding: 20px; z-index: 999; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: #ccc; padding: 12px 0; border-bottom: 1px solid #333; text-decoration: none; font-size: 1.1rem; }
+        .mobile-menu a:hover { color: #e94560; }
+
+        /* 블로그 전용 스타일 */
+        .blog-hero { padding: 80px 0 60px; text-align: center; }
+        .blog-hero h1 { font-size: 3.2rem; font-weight: 900; color: #1a1a2e; margin-bottom: 15px; letter-spacing: -1px; }
+        .blog-hero h1 span { color: #e94560; }
+        .blog-hero p { font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto; font-weight: 400; }
+        .blog-hero .badge { display: inline-block; background: #e94560; color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+
+        .blog-post { background: #fff; border-radius: 20px; padding: 50px 60px; margin-bottom: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+        .blog-post .post-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #f0ece4; }
+        .blog-post .post-meta .date { font-size: 0.9rem; color: #888; font-weight: 500; }
+        .blog-post .post-meta .tag { background: #1a1a2e; color: #fff; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600; }
+        .blog-post h2 { font-size: 2.2rem; font-weight: 800; color: #1a1a2e; margin-bottom: 25px; letter-spacing: -0.5px; }
+        .blog-post h2 i { font-style: normal; color: #e94560; }
+        .blog-post p { font-size: 1.1rem; color: #444; margin-bottom: 20px; line-height: 1.8; }
+        .blog-post .highlight-box { background: #f9f6f0; border-left: 5px solid #e94560; padding: 25px 30px; margin: 30px 0; border-radius: 0 15px 15px 0; }
+        .blog-post .highlight-box p { margin-bottom: 0; font-weight: 600; color: #1a1a2e; font-size: 1.15rem; }
+        .blog-post ul { margin: 20px 0 30px 25px; }
+        .blog-post ul li { font-size: 1.05rem; color: #444; margin-bottom: 12px; line-height: 1.6; }
+        .blog-post ul li strong { color: #e94560; }
+        .blog-post .cta-inline { display: inline-block; background: #e94560; color: #fff; padding: 12px 35px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1.1rem; margin-top: 20px; transition: all 0.3s; }
+        .blog-post .cta-inline:hover { background: #d63851; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(233,69,96,0.3); }
+        .blog-post .image-placeholder { width: 100%; height: 400px; background: #e8e4dc; border-radius: 15px; margin: 30px 0; display: flex; align-items: center; justify-content: center; color: #888; font-size: 1.2rem; overflow: hidden; }
+        .blog-post .image-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+
+        .related-posts { padding: 40px 0 80px; }
+        .related-posts h3 { font-size: 1.8rem; font-weight: 800; color: #1a1a2e; margin-bottom: 30px; text-align: center; }
+        .related-posts .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .related-posts .card { background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .related-posts .card:hover { transform: translateY(-5px); }
+        .related-posts .card .card-tag { font-size: 0.8rem; color: #e94560; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .related-posts .card h4 { font-size: 1.2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+        .related-posts .card p { font-size: 0.95rem; color: #666; line-height: 1.5; }
+        .related-posts .card a { color: #e94560; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block; margin-top: 15px; }
+
+        footer { background: #1a1a2e; color: #ccc; padding: 50px 0 30px; text-align: center; }
+        footer p { font-size: 0.9rem; margin-bottom: 10px; }
+        footer a { color: #e94560; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hamburger { display: flex; }
+            .blog-hero h1 { font-size: 2.2rem; }
+            .blog-post { padding: 30px 25px; }
+            .blog-post h2 { font-size: 1.6rem; }
+            .blog-post .image-placeholder { height: 250px; }
+            .related-posts .grid { grid-template-columns: 1fr; }
+            .blog-post .post-meta { flex-direction: column; align-items: flex-start; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">서초<span>KARAOKE</span></a>
+            <nav>
+                <a href="/">홈</a>
+                <a href="/about">소개</a>
+                <a href="/blog">블로그</a>
+                <a href="/contact" class="cta-nav">예약하기</a>
+            </nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="/">홈</a>
+            <a href="/about">소개</a>
+            <a href="/blog">블로그</a>
+            <a href="/contact">예약하기</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="blog-hero">
+            <div class="badge">🔥 HOT BLOG</div>
+            <h1>서초 가라오케, <span>진짜는 따로 있다</span></h1>
+            <p>형님들만 아는 그곳. 감각적인 공간과 완벽한 사운드, 그리고 압도적인 프라이빗. 서초에서 가장 핫한 가라오케의 진실을 파헤친다.</p>
+        </section>
+
+        <article class="blog-post">
+            <div class="post-meta">
+                <span class="date">2025년 3월 20일 | 작성자: 서초의 형</span>
+                <span class="tag">#서초가라오케 #진짜정보</span>
+            </div>
+            <h2>서초 가라오케, <i>왜 형님들은 거기만 갈까?</i></h2>
+            <p>서초구, 강남 사이에 위치한 이 동네. 수많은 가라오케가 우후죽순 생겨나고 사라진다. 하지만 형님들은 안다. 진짜는 몇 군데 안 된다는 걸. 오늘은 그중에서도 <strong>서초 가라오케 추천</strong> 1순위로 꼽히는 곳, 그 이유를 낱낱이 까발려본다.</p>
+
+            <div class="image-placeholder">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800" alt="서초 가라오케 인테리어">
+            </div>
+
+            <p>첫 번째, <strong>인테리어</strong>다. 여긴 '감각적'이라는 말이 부끄러울 정도다. 조명 하나, 소파 하나, 심지어 벽지까지. 다크한 톤에 골드 포인트, 그리고 은은한 조명. 여기 들어서면 왜 형님들이 이곳을 선택하는지 단번에 알 수 있다. 다른 데 가면 '아, 여긴 좀...'이라는 말이 절로 나온다.</p>
+
+            <div class="highlight-box">
+                <p>"서초 가라오케 중에서도 이곳은 진짜 다르다. 들어서는 순간부터 느낌이 오지. 형님들이 인정한 곳은 이유가 있다." — 서초 단골 회원 K</p>
+            </div>
+
+            <p>두 번째, <strong>음향</strong>. 이건 진짜다. 최신 시스템으로 도배된 이곳은 당신의 목소리를 한 단계 업그레이드시켜준다. 노래방? 아니다. 여긴 가라오케다. 차원이 다르다. 저음부터 고음까지, 모든 음역대를 완벽하게 살려주는 사운드. 여기서 한 번 노래해보면 다른 곳은 '그냥 방'일 뿐이다.</p>
+
+            <ul>
+                <li><strong>프라이빗:</strong> 완전 밀폐형 룸, 외부 소음 제로. 형님들의 비밀 회의도 가능.</li>
+                <li><strong>서비스:</strong> 룸서비스는 기본, 원하는 건 뭐든 OK. 단, 예의는 지켜야 한다.</li>
+                <li><strong>위치:</strong> 서초구 중심, 교통 완전 편리. 발렛파킹도 가능.</li>
+                <li><strong>가격:</strong> 싸진 않다. 하지만 그만한 값어치를 한다. 진짜 가치는 가격에 있지 않다.</li>
+            </ul>
+
+            <p>세 번째, <strong>분위기</strong>. 여긴 '가라오케'지만 '클럽' 같은 분위기다. 직원들도 프로페셔널하고, 손님들도 다 아는 사람들만 온다. 즉, <strong>서초 가라오케 추천</strong>을 검색했다면, 여기가 바로 그곳이다. 다른 데 가서 시간 낭비하지 마라.</p>
+
+            <p>결론적으로, 서초에서 진짜 가라오케를 원한다면, 여기다. 형님들이 인정한 곳, 감각적인 공간, 완벽한 사운드. 그리고 당신을 위한 최고의 밤. 지금 바로 예약하고 직접 경험해봐. 후회는 없다. 단, 한 번 가면 다른 데는 못 간다. 그게 유일한 단점이다.</p>
+
+            <a href="/contact" class="cta-inline">🔥 지금 예약하고 특별한 밤을</a>
+        </article>
+
+        <section class="related-posts">
+            <h3>🔥 더 뜨거운 이야기</h3>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-tag">인기글</div>
+                    <h4>서초 가라오케 vs 강남 가라오케</h4>
+                    <p>진짜 차이는 여기에 있다. 서초와 강남, 형님들은 어디로 갈까?</p>
+                    <a href="#">더보기 →</a>
+                </div>
+                <div class="card">
+                    <div class="card-tag">꿀팁</div>
+                    <h4>가라오케에서 절대 하지 말아야 할 것</h4>
+                    <p>형님들이 알려주는 가라오케 에티켓. 이건 지켜야 한다.</p>
+                    <a href="#">더보기 →</a>
+                </div>
+                <div class="card">
+                    <div class="card-tag">리뷰</div>
+                    <h4>서초 가라오케, 직접 가봤습니다</h4>
+                    <p>솔직한 후기. 진짜는 거짓말하지 않
+</body>
+</html>
